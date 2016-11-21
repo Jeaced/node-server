@@ -7,12 +7,22 @@
 <script>  
 		$(document).ready(function() {
             $("#link").click(function(event){
-               var text = $("#link_id").val();
-               var path = "127.0.0.1:3000/" + text;
-               $.get(text, function(data, status){
-				//data = unpack(data);
-            	alert("Data: " + data);
-        	});
+              console.log("clicked search btn");
+              var text = $("#link_id").val();
+              console.log(text);
+              $.ajax({
+                url: "/search",
+                data: { search_query: text },
+                success: function(data, status) {
+                  console.log("request /search success");
+                  console.log(data);
+                },
+                error: function(jqXHR, status, errorThrown) {
+                  console.log(status);
+                  console.log(jqXHR);
+                  console.log(errorThrown);
+                }
+              });
             });
          });
 	</script>
