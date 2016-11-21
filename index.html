@@ -14,9 +14,14 @@
                 var text = $("#link_id").val();
                 console.log(text);
                 $.ajax({
+                    type: "GET",
                     url: "/search",
+                    dataType: "text",
                     data: {search_query: text},
                     success: function (data, status) {
+                        if (data) {
+                            $('#result').html(data);
+                        }
                         console.log("request /search success");
                         console.log(data);
                     },
@@ -47,7 +52,7 @@
     </div>
     <div class="col-lg-12 col-md-12, col-sm-12 col-xs-12 output">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <p class="form-control">Some text here...</p>
+            <p class="form-control" id="result"></p>
         </div>
     </div>
 </div>
