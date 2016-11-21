@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var searching = require("searching")    
+var searching = require("searching");
 
 app.use('/js', express.static(__dirname + '/js/'));
 
