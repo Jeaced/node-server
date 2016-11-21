@@ -2,12 +2,11 @@ var express = require("express");
 var app = express();
 var searching = require("searching");
 
-app.use('/js', express.static(__dirname + '/js/'));
+app.use("/public", express.static(__dirname + "/webapps"));
 
 app.get('/', function (req, res) {
-
-	//res.sendFile(path.join(__dirname, 'index.html'));	
-	res.sendfile("index.html")
+	//res.sendFile(path.join(__dirname, 'index.html'));
+	res.sendfile("webapps/view/index.html")
 });
 
 app.get("/search", function (req, res) {
