@@ -1,15 +1,29 @@
 {
-  "name": "example",
+  "name": "sttp-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Example of using sttp package",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.14.0",
-    "searching": "^1.0.4"
-  }
+    "searching": "^1.0.4",
+    "sttp": "^1.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeaced/node-server.git"
+  },
+  "keywords": [
+    "sttp",
+    "example"
+  ],
+  "bugs": {
+    "url": "https://github.com/Jeaced/node-server/issues"
+  },
+  "homepage": "https://github.com/Jeaced/node-server#readme"
 }
