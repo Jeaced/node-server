@@ -1,4 +1,4 @@
-# Example of using (sttp)[http://github.com/alikhil/sttp] protocol
+# Example of using [sttp](http://github.com/alikhil/sttp) protocol
 
 ### Tutorial
 
@@ -18,10 +18,10 @@ var unpackedData = packer.unpack(pack);
 
 ```
 
-(Read more)[http://github.com/alikhil/sttp].
+[Read more](http://github.com/alikhil/sttp).
 
-### Fast start
-```
+### Quick start
+```sh
 git clone https://github.com/jeaced/node-server/
 cd node-server
 npm install
