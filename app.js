@@ -14,7 +14,6 @@ app.get("/bundle.js", function(req, res) {
 app.use("/public", express.static(__dirname + "/webapps"));
 
 app.get("/", function (req, res) {
-	//res.sendFile(path.join(__dirname, 'index.html'));
 	res.sendfile("webapps/view/index.html")
 });
 
