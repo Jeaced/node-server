@@ -1,10 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var aes = require("../node_modules/sttp/src/aes.js");
-
-$(function(){
-	console.log(aes.generateKey());
-});
-},{"../node_modules/sttp/src/aes.js":3}],2:[function(require,module,exports){
 var bigInt = (function (undefined) {
     "use strict";
 
@@ -1220,7 +1214,7 @@ if (typeof module !== "undefined" && module.hasOwnProperty("exports")) {
     module.exports = bigInt;
 }
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 const KEY_SIZE = 16; // 16 bytes
 var util = require("../src/util.js");
 
@@ -1633,7 +1627,7 @@ function generateKey() {
 exports.generateKey = generateKey;
 exports.encryptAES = encryptAES;
 exports.decryptAES = decryptAES;
-},{"../src/util.js":4}],4:[function(require,module,exports){
+},{"../src/util.js":3}],3:[function(require,module,exports){
 var bigInt = require("big-integer");
 
 function stringToByteArray(str) {
@@ -1766,4 +1760,27 @@ exports.concatenateBytesIntoBin = concatenateBytesIntoBin;
 exports.decToBin = decToBin;
 exports.getRandomBigIntPrime = getRandomBigIntPrime;
 
-},{"big-integer":2}]},{},[1]);
+},{"big-integer":1}],4:[function(require,module,exports){
+var aes = require("../../node_modules/sttp/src/aes.js");
+
+$(function(){
+	$("#link").click(function (event) {
+        console.log("clicked search btn");
+        var text = $("#link_id").val();
+        console.log(text);
+        $.ajax({
+            type: "GET",
+            url: "/search",
+            dataType: "text",
+            data: {search_query: text},
+            success: getSuccess,
+            error: function (jqXHR, status, errorThrown) {
+                console.log(status);
+                console.log(jqXHR);
+                console.log(errorThrown);
+            }
+    	});
+    });
+	console.log(aes.generateKey());
+});
+},{"../../node_modules/sttp/src/aes.js":2}]},{},[4]);

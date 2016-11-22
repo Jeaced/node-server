@@ -2,38 +2,23 @@
 <html>
 <head>
     <title>Search</title>
-    <script src="/public/js/script-b.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/public/js/script-b.js"></script>
     <script src="/public/js/bootstrap.min.js"></script>
     <link href="/public/css/bootstrap.min.css" rel="stylesheet">
     <link href="/public/css/style.css" rel="stylesheet">
 
     <script>
         $(document).ready(function () {
-            $("#link").click(function (event) {
-                console.log("clicked search btn");
-                var text = $("#link_id").val();
-                console.log(text);
-                $.ajax({
-                    type: "GET",
-                    url: "/search",
-                    dataType: "text",
-                    data: {search_query: text},
-                    success: function (data, status) {
-                        if (data) {
-                            $('#result').html(data);
-                        }
-                        console.log("request /search success");
-                        console.log(data);
-                    },
-                    error: function (jqXHR, status, errorThrown) {
-                        console.log(status);
-                        console.log(jqXHR);
-                        console.log(errorThrown);
-                    }
-                });
-            });
+            
         });
+        function getSuccess(data, status) {
+          if (data) {
+                        $('#result').html(data);
+                    }
+                    console.log("request /search success");
+                    console.log(data);
+        }
     </script>
 </head>
 <body>
