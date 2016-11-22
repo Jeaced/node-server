@@ -14,13 +14,21 @@
         });
         function getSuccess(data, status) {
             if (data) {
-                var string = JSON.parse(data);
-                for (var i = 0; i < string.length; i++) {
-                    $('#result').append("<div class=\"alert alert-success\" id=\"result\">" + string[i] + "</div>");
+                $("#result").empty();
+                console.log(data);
+                var items = JSON.parse(data);
+                if (items.length === 0)
+                    printItem("Nothing found with query:" + $("#query").val())
+                for (var i = 0; i < items.length; i++) {
+                    printItem(items[i]);
                 }
             }
             console.log("request /search success");
             console.log(data);
+        }
+
+        function printItem(item) {
+            $('#result').append("<div class=\"alert alert-success\" id=\"result\">" + item + "</div>");
         }
     </script>
 </head>
@@ -32,8 +40,16 @@
             data encryption and compression to increase security level.</p>
     </div>
     <div class="col-lg-12 col-md-12, col-sm-12 col-xs-12">
-        <div class="col-lg-9 col-md-9, col-sm-9 col-xs-9">
-            <input class="form-control" id='link_id' title="search">
+        <div class="col-lg-7 col-md-7, col-sm-7 col-xs-7">
+            <input class="form-control" id='query' title="search">
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <div class="col-lg-offset-2 ">
+                <label>
+                    <input type="checkbox" id="sttp_used"> 
+                    Use STTP
+                </label>
+            </div>
         </div>
         <div class="col-lg-3 col-md-3, col-sm-3 col-xs-3">
             <input class="btn btn-success" style="width: 100%" id='link' type="submit" value='Search' title="search-button">
