@@ -13,7 +13,7 @@
     "browserify": "^13.1.1",
     "express": "^4.14.0",
     "searching": "^1.0.4",
-    "sttp": "^1.0.0"
+    "sttp": "^1.1.0"
   },
   "devDependencies": {},
   "repository": {
